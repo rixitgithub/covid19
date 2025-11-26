@@ -1,11 +1,29 @@
 from fastapi import FastAPI , UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 import  tensorflow as tf
 import numpy as np
 from PIL import Image
 import io
+import os
+
 app = FastAPI()
 
-model = tf.keras.models.load_model('model.h5')
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Get the directory where this script is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, 'model.h5')
+
+print(f"Loading model from: {MODEL_PATH}")
+model = tf.keras.models.load_model(MODEL_PATH)
+print("Model loaded successfully!")
 
 @app.get("/")
 def home():
