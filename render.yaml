@@ -1,0 +1,33 @@
+services:
+  # Backend API Service
+  - type: web
+    name: covid19-backend
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: starter
+    envVars:
+      - key: ALLOWED_ORIGINS
+        sync: false
+        value: http://localhost:3000,http://127.0.0.1:3000
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 8000
+    healthCheckPath: /
+    autoDeploy: true
+
+  # Frontend Service (optional - can deploy separately to Vercel/Netlify)
+  # Uncomment if you want to deploy frontend on Render too
+  # - type: web
+  #   name: covid19-frontend
+  #   env: node
+  #   buildCommand: cd frontend && npm install && npm run build
+  #   startCommand: cd frontend && npm start
+  #   envVars:
+  #     - key: NEXT_PUBLIC_API_URL
+  #       sync: false
+  #       value: https://covid19-backend.onrender.com
+  #   plan: starter
+  #   autoDeploy: true
+
