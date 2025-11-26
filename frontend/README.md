@@ -45,13 +45,24 @@ pnpm dev
 
 ## Configuration
 
-By default, the app uses the deployed API at `https://covid-19-detection-1d3l.onrender.com`.
+### Environment Variables
 
-To use a local API, create a `.env.local` file in the frontend directory:
+1. Copy the example environment file:
+```bash
+cp .env.example .env.local
+```
+
+2. Edit `.env.local` and set your backend API URL:
 
 ```env
+# For local development
 NEXT_PUBLIC_API_URL=http://localhost:8000
+
+# For production (replace with your deployed backend URL)
+# NEXT_PUBLIC_API_URL=https://your-backend-url.com
 ```
+
+By default, if no `.env.local` file exists, the app will use `http://localhost:8000`.
 
 ## Build for Production
 
