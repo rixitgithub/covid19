@@ -276,6 +276,34 @@ export default function Home() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-slate-200">
+                  <div className="mb-6">
+                    <p className="text-sm font-semibold text-slate-700 mb-3">Try with sample images:</p>
+                    <div className="flex flex-col gap-2">
+                      <a
+                        href="https://github.com/arihant1805/COVID-Detection/blob/master/SampleImage.jpeg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm group transition-colors"
+                      >
+                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Download Sample Image
+                      </a>
+                      <a
+                        href="https://www.kaggle.com/datasets/khoongweihao/covid19-xray-dataset-train-test-sets"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm group transition-colors"
+                      >
+                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Kaggle Dataset
+                      </a>
+                    </div>
+                  </div>
+
                   <p className="text-xs text-slate-400 text-center">
                     Disclaimer: This tool is for educational purposes only and should not be used as a substitute for professional medical diagnosis.
                   </p>
